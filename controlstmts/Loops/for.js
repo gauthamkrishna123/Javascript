@@ -105,17 +105,51 @@
 
 //Fibonacci
 
-     let n=7;
-     let a=0
-     let b = 1
-     let i;
-     let temp=0;
-     for (i=0; i<=n; i++){
+//      let n=7;
+//      let a=0
+//      let b = 1
+//      let i;
+//      let temp=0;
+//      for (i=0; i<=n; i++){
 
-        temp = a+b;
-        a=b;
-        b=temp;
-        console.log(a);
-     }
+//         temp = a+b;
+//         a=b;
+//         b=temp;
+//         console.log(a);
+//      }
 
-//amstrong number
+// //Palindrome
+// let v=121
+// let number=121
+// let rev=0
+// for(; number>0;){   //  while is better
+//     rem=number%10;
+//     rev=rev*10+rem;
+//     number=Math.floor(number/10)
+// }
+// console.log(rev)
+// if(rev == v){
+//     console.log("palindrome")
+// }else{
+//     console.log("not palindrome");
+    
+// }
+
+//sum of digits
+n=234
+let sum=0
+for (; n>0;){
+    sum+=n%10;
+    n=Math.floor(n/10);
+}
+console.log(`sum of digits is : ${sum}`);
+
+// count the no: of digits
+
+num=2345
+let count=0
+for (; num>0;){
+    num=Math.floor(num/10);
+    count++
+}
+console.log(`number of digits are : ${count}`);

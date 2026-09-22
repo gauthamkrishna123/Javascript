@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let balance = 2000;
+        let choice;
+        do{
+            choice = Number(
+                prompt(
+                "1.balance\n"+
+                "2.Burger 100/-\n"+
+                "3.Pizza 200/-\n"+
+                "4.Sandwitch 80/-\n"+
+                "5.exit"
+            )
+            );
+            switch (choice){
+                case 1:
+
+                    console.log("available balance :"+balance)
+                break;
+                case 2:
+                    balance-=100;
+                    console.log("burger purchased"+"remaining balance :"+balance)
+                break;
+                case 3:
+                    balance-=200;
+                    console.log("Pizza purchased"+"remaining balance :"+balance)
+                break;
+                case 4:
+                    balance-=80;
+                    console.log("Sandwitch purchased"+"remaining balance :"+balance)
+                break;
+                case 5:
+                    console.log("Thank you for chose Us")
+                break;
+                default:
+                    console.log("invalid")
+            }
+        }while( choice!==5)
+    </script>
+</body>
+</html>
