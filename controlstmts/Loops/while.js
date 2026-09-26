@@ -28,7 +28,7 @@
 //     e+=2;
 // }
 //  document.write(esum)
-    
+
 // document.write("<br>")
 
 // //sum of odd
@@ -40,7 +40,7 @@
 //     o+=2;
 // }
 //  document.write(osum)
-    
+
 // document.write("<br>")
 
 // //square
@@ -59,9 +59,9 @@
 // let x=1
 //  count=0;
 // while(x<=100){
-    
+
 //     if(x % 7 == 0){
-      
+
 //        count+=1
 //     }
 //     x++
@@ -77,7 +77,7 @@
 //         document.write("<br>")
 //     }
 //     y++;
-     
+
 //  }
 //  z=1;
 //  let count=0;
@@ -92,6 +92,7 @@
 // document.write("Avarage =" + avg)
 
 // //Palindrome
+
 // let v=121
 // let number=121
 // let rev=0
@@ -105,65 +106,93 @@
 //     console.log("palindrome")
 // }else{
 //     console.log("not palindrome");
-    
+
 // }
 
 //armstrong
 
 // let num=153;
 // let original=num;
+// let a=0;
+// let x=0;
+// while (num>0){
+//     a=num%10  // 3,5,1
+//     x+=a**3; //0+27 + 9+125 + 1 =153
+//     num =Math.floor(num/10) //15,1
+// }
+// if (x == original){
+//     console.log("armstrong");
 
-// //do while
+// }else{
+//     console.log("not armstrong");
+
+// }
+
+//do while
 
 //  let n=2;
 //  do{
 //     console.log(n);
 //     n++
-    
+
 //  }while(n<10)
 
-    //atm
+//     //atm
 
-    let balance=1000;
-    let choice;
+//     let balance=1000;
+//     let choice;
 
-    do{
-        choice = Number(
-            prompt(
-                "ATM Menu\n"+
-                "1.Check balance\n"+
-                "2.Deposit\n"+
-                "3.Withdraw\n"+
-                "4.exit"
-            )
-        );
-        switch (choice){
-            case 1:
-                console.log("current balance :"+ balance);
-                break;
-            case 2:
-                let deposit =Number(prompt("deposit amount:"))
-                balance+=deposit;
-                console.log(deposit + "deposited.");
-                console.log("new balance ="+balance);
-                break;
-            case 3:
-                let withdraw =Number(prompt('enter withdrawal amount:'))
-                if (withdraw <= balance){
-                balance-=withdraw;
-                console.log(withdraw+"withdrawn.");
-                console.log("remaining balance: "+ balance);
-                }else{
-                    console.log("insufficient balance");
-                    
-                }
-                break;
-            case 4:
-                console.log("thank you for using ATM.")
-                break;
-            default:
-                console.log("invalid choice");
-    
-        }
-        
-    }while(choice !== 4);
+//     do{
+//         choice = Number(
+//             prompt(
+//                 "ATM Menu\n"+
+//                 "1.Check balance\n"+
+//                 "2.Deposit\n"+
+//                 "3.Withdraw\n"+
+//                 "4.exit"
+//             )
+//         );
+//         switch (choice){
+//             case 1:
+//                 console.log("current balance :"+ balance);
+//                 break;
+//             case 2:
+//                 let deposit =Number(prompt("deposit amount:"))
+//                 balance+=deposit;
+//                 console.log(deposit + "deposited.");
+//                 console.log("new balance ="+balance);
+//                 break;
+//             case 3:
+//                 let withdraw =Number(prompt('enter withdrawal amount:'))
+//                 if (withdraw <= balance){
+//                 balance-=withdraw;
+//                 console.log(withdraw+"withdrawn.");
+//                 console.log("remaining balance: "+ balance);
+//                 }else{
+//                     console.log("insufficient balance");
+
+//                 }
+//                 break;
+//             case 4:
+//                 console.log("thank you for using ATM.")
+//                 break;
+//             default:
+//                 console.log("invalid choice");
+
+//         }
+
+//     }while(choice !== 4);
+
+// fibonacci do-while
+
+let a = 0,
+  b = 1,
+  temp = 0;
+let n = 0;
+do {
+  console.log(a);
+  temp = a + b;
+  a = b;
+  b = temp;
+  n++;
+} while (n <= 10);

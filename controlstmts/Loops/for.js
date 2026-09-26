@@ -136,20 +136,40 @@
 // }
 
 //sum of digits
-n=234
-let sum=0
-for (; n>0;){
-    sum+=n%10;
-    n=Math.floor(n/10);
-}
-console.log(`sum of digits is : ${sum}`);
+// n=234
+// let sum=0
+// for (; n>0;){
+//     sum+=n%10;
+//     n=Math.floor(n/10);
+// }
+// console.log(`sum of digits is : ${sum}`);
 
 // count the no: of digits
 
-num=2345
-let count=0
-for (; num>0;){
-    num=Math.floor(num/10);
-    count++
+// num=2345
+// let count=0
+// for (; num>0;){
+//     num=Math.floor(num/10);
+//     count++
+// }
+// console.log(`number of digits are : ${count}`);
+
+let student ={
+    name :'gautham',
+    age: 23
 }
-console.log(`number of digits are : ${count}`);
+for (let key in student){
+console.log(key,student[key]);
+
+}
+
+let numbers =[1,2,3,5,6]
+ for( let num in numbers){
+    console.log(num,numbers[num]);
+
+ }
+
+ for(let n of numbers){
+    console.log(n);
+    
+ }
