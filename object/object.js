@@ -156,3 +156,23 @@ let copy2 = structuredClone(person3); //takes the exact copy of the object
 copy2.address.city = "Tvm";
 console.log("deep copy:", copy2);
 console.log(person3);
+
+
+let stds =[
+  {id:1,name:"gautham",age:'20'},
+  {id:2,name:"dilshad",age:'30'},
+  {id:3,name:"safvan",age:'40'}
+];
+console.log(stds[0].name);
+console.log(stds[2].age);
+
+for(let i =0;i<stds.length;i++){
+  console.log(stds[i].name,stds[i].age);
+  
+}
+stds.push({id:4,name:"arun",mark:24})
+ stds.shift()//remove from first
+console.log(stds);
+// stds.shift({id:2,name:"dilshad",age:30})
+// console.log(stds);
+

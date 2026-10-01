@@ -77,7 +77,7 @@ let x = array1.reduce(function (a, b) {
     return a + b;  //a - accumulator(store the result so far) b- current array value
 }, 0);  //the initial value of a is 0
 console.log("reduce", x);
-//"Go through every value in the array, keep adding it to the previous result, and finally give me the total."
+//"Go through every value in the array, keep adding it to the previous result, and finally give  the total."
 
 let array2 = array1.sort()
 console.log(array2);
