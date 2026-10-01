@@ -48,10 +48,9 @@ array2.sort((a,b) => b-a)
 console.log("second largest:",array2[1]);
 
 //second smallest
-
+array2 = [...new Set(array2)];
 array2.sort((a,b) => a-b)
-let res = array2.find(n => n>array2[0])
-console.log("second smallest:",res);
+console.log("second smallest:",array2[1]);
 
 // if (array2[0] !== array2[1]){
 //     console.log("second smallest:",array2[1]);

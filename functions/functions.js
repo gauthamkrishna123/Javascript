@@ -176,3 +176,73 @@ const prime = (n) => {
   }
 };
 prime(15);
+
+// 13 .palindrome
+
+const palindrome =() =>{
+  let x ="madam"
+  let p = ''
+  for (i=x.length-1; i>=0;i--){
+    p+=x[i];
+  }
+  if (p == x){
+    console.log("palindrome");
+    
+  }else{
+    console.log("not palindrome");
+    
+  }
+}
+palindrome();
+
+//14 reverse string
+
+const rev =() =>{
+  let str ='welcome'
+  let y= str.split('').reverse().join('');
+  return y;
+
+}
+let r =rev();
+console.log(r);
+
+//16
+
+const sumOfdigits = () =>{
+  let x = 254;
+  let sum =0;
+  while(x>0)
+  {
+    let rem = x%10;
+    sum+=rem;
+    x=Math.floor(x/10);
+  }
+  return sum;
+}
+
+let sd =sumOfdigits();
+
+console.log("sum of digits:",sd);
+
+//Armstrong Number
+
+const Armstrong = () =>{
+  let num = 163;
+  let original = num;
+  let sum = 0;
+  while(num>0){
+    let rem = num%10;
+    sum +=rem**3
+    num = Math.floor(num/10)
+  }
+  if(sum === original ){
+    
+    return "armstrong number"
+  }else{
+     return "not armstrong number"
+  }
+  
+}
+let arm =Armstrong();
+
+console.log(arm);
