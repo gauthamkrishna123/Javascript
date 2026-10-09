@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .form-container {
+        width: 400px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+        font-size: 28px;
+      }
+
+      .form-group {
+        margin-bottom: 18px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 7px;
+        font-weight: bold;
+        color: #444;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 15px;
+        outline: none;
+        transition: 0.3s;
+      }
+
+      input:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 5px rgba(102, 126, 234, 0.4);
+      }
+
+      .error {
+        color: red;
+        font-size: 13px;
+        margin-top: 5px;
+        min-height: 16px;
+        display: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background-color: #667eea;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #5568d8;
+      }
+    </style>
+  <body>
+    <div class="form-container">
+      <h1>Registration form</h1>
+      <form action="" onsubmit="return validation(event);">
+        <div class="form-group">
+          <label for="uname">Username</label>
+          <input type="text" id="uname" />
+          <div class="error" id="unameerror">User name must be atleast 3</div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" />
+          <div class="error" id="emailerror">Enter a valid email</div>
+        </div>
+        <div class="form-group">
+          <label for="pass">Password</label>
+          <input type="password" id="pass" />
+          <div class="error" id="passerror">Password must be atlest 6</div>
+        </div>
+        <div class="form-group">
+          <label for="cpass">Confirm Password</label>
+          <input type="password" id="cpass" />
+          <div class="error" id="cpasserror">password mismatch</div>
+        </div>
+        <button type="submit">Regester</button>
+      </form>
+    </div>
+    <script>
+      function validation(event){
+        event.preventDefault();
+
+        const errors = document.getElementsByClassName("error")
+        for(let error of errors){
+          error.style.display ='none';
+        }
+        const username =document.getElementById('uname').value;
+        const password =document.getElementById('pass').value;
+        const email =document.getElementById('email').value;
+        const confirmpass =document.getElementById('cpass').value;
+
+        let isValid = true;
+
+        if(username.length < 3){
+          document.getElementById('unameerror').style.display ='block';
+          isValid =false
+        }
+        if(!email.includes("@")|| !email.includes(".com")){
+          document.getElementById('emailerror').style.display='block';
+        }
+        if(password.length <6){
+          document.getElementById('passerror').style.display = 'block';
+        }
+        if (password !== confirmpass){
+          document.getElementById('cpasserror').style.display='block';
+        }
+        return isValid;
+      }
+    </script>
+  </body>
+</html>

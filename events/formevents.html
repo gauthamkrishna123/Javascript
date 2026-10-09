@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm" onsubmit="handleChange()">
+        <h2>Form events</h2>
+        <label>Name :</label>
+        <input type="text" id="name" required><br>
+        <button id="sub" type="submit">Submit</button><br>
+        <button type="reset">Reset</button>
+    </form>
+    <script>
+        const form =document.querySelector("form");
+        const input =document.querySelector("input")
+        const btn = document.getElementById('sub')
+        // function handleChange(e){
+        //     e.preventDefault()
+        //     console.log("form submitted via onsubmit attribute");
+            
+        // }
+        form.addEventListener("submit",function(e){
+            e.preventDefault();//stop default form
+            console.log("form submitted");
+            
+        })
+        //input event(typing)
+        input.addEventListener('input',function(){
+            console.log("Typing:",input.value);
+            
+        })
+        form.addEventListener('reset', function(){
+            console.log('value reset');
+            
+        })
+        input.addEventListener('change',function(){
+            console.log("value changed");
+            
+        })
+        btn.addEventListener('click',function(){
+            console.log('button clicked');
+            
+        })
+        btn.addEventListener('mouseover',function(){
+            console.log('mouse over');
+            
+        })
+    </script>
+</body>
+</html>

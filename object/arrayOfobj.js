@@ -26,9 +26,10 @@ let totalsal = employee.reduce((total,sal) =>{
 console.log("total salary:",totalsal);
 
 let Avgage =employee.reduce((total,age) =>{ 
-    return total+age.age/employee.length
+    return total+age.age
 },0)
-console.log("avarage age",Math.floor(Avgage));
+let Avg = Avgage/employee.length
+console.log("avarage age",Math.floor(Avg));
 
 let s = employee.filter(emp => emp.salary >30000).map(emp =>{
     return emp.name
@@ -47,7 +48,7 @@ console.log(employee);
 let products =[
     {id:1,name:'Table',price:26000},
     {id:2,name:'Chair',price:1000},
-    {id:3,name:'Sofa',price:5000},
+    {id:3,name:'Sofa',price:55000},
     {id:3,name:'Sofa',price:5000}
 ]
 
@@ -59,8 +60,13 @@ let TotalPrice = products.reduce((t,p) =>{
 },0)
 console.log("total price:",TotalPrice);
 
-let h = products.find(p =>p.price>25000)
-console.log("price above 25000:",h.name);
+let h = products.filter(p =>p.price>25000).map(p =>p.name)
+console.log(h)
+h.forEach( n =>{
+    console.log("price above 25000:",n);
+    
+})
+
 
 //find element using id
 let i =products.find(p =>p.id === 1)

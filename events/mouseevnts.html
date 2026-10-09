@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">HELLO</div>
+    <button onclick="handleClick()">click</button>
+    <p id="res">welcome</p>
+    <button id="bt2">clickme</button> 
+    <script>
+        const click = document.getElementById("bt2")
+        const text =document.getElementById("box");
+        text.addEventListener("mouseover", function(event){
+            event.target.style.backgroundColor ='red';
+            event.target.textContent ='Whats up'
+        })
+            text.addEventListener("mouseout", function(event){
+            event.target.style.backgroundColor ='yellow';
+            event.target.textContent ='Welcomeee!'
+        })
+            text.addEventListener("click", function(event){
+            event.target.style.backgroundColor ='green';
+            event.target.textContent ='CLICK   ME  '
+        })
+        function handleClick(){
+            document.getElementById("res").style.backgroundColor="yellow"
+        }
+        click.addEventListener("click",function(event){
+            alert("button clicked")
+        })
+    </script>
+</body>
+</html>

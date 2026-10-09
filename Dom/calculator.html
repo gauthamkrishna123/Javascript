@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="first" type="number" />
+    <input id="second" type="number" /><br />
+    <button id="add">add</button><br />
+    <button id="sub">sub</button><br />
+    <button id="div">div</button><br />
+    <button id="mul">mul</button><br />
+    <p id="result"></p>
+    <script>
+      const inp1 = document.getElementById("first");
+      const inp2 = document.getElementById("second");
+      const add = document.getElementById("add");
+      const sub = document.getElementById("sub");
+      const mul = document.getElementById("mul");
+      const div = document.getElementById("div");
+      const res = document.getElementById("result");
+
+      
+      add.onclick = () => {
+        const num1 =Number(inp1.value)
+        const num2 =Number(inp2.value)
+        res.innerText = num1 + num2;
+      };
+
+      sub.onclick = () => {
+        const num1 =Number(inp1.value)
+        const num2 =Number(inp2.value)
+        res.innerText = num1 - num2;
+      };
+        div.onclick = () => {
+        const num1 =Number(inp1.value)
+        const num2 =Number(inp2.value)
+        res.innerText = num1 / num2;
+      };
+        mul.onclick = () => {
+        const num1 =Number(inp1.value)
+        const num2 =Number(inp2.value)
+        res.innerText = num1 * num2;
+      };
+    </script>
+  </body>
+</html>

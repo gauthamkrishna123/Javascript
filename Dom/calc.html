@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="first" type="number" />
+    <input id="second" type="number" /><br />
+    <button onclick="operations('+')" id="add">add</button><br />
+    <button onclick="operations('-')"id="sub">sub</button><br />
+    <button onclick="operations('/')"id="div">div</button><br />
+    <button onclick="operations('*')"id="mul">mul</button><br />
+    <p id="result"></p>
+    <script>
+        function operations(operator){
+            let a = parseInt(document.getElementById("first").value);
+            let b = parseInt(document.getElementById("second").value);
+            let res;
+            if (operator == '+'){
+                res=a+b;
+            }else if(operator == "-"){
+                res=a-b;
+            }else if(operator == "/"){
+                res=a/b;
+            }else if(operator == "*"){
+                res=a*b;
+            }else{
+                res="invalid operator"
+                return;}
+                document.getElementById('result').innerHTML=`${a} ${operator} ${b} =${res}`
+            
+        }
+    </script>
+</body>
+</html>

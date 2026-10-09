@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">hello, welcome</h1>
+    <button id="submitbtn">Submit</button>
+    <h2 class="c1">helllllloo</h2>
+    <h3 class="c1">how are u!</h3>
+    <p id="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias quod ad, doloribus deleniti praesentium a unde consectetur nemo corporis facere doloremque et quisquam eveniet consequatur repudiandae nisi eum. Corrupti, eligendi?</p>
+
+    <script>
+        const h1 =document.getElementById('title')
+        const Submit =document.getElementById('submitbtn')
+
+        Submit.onclick=()=>{
+            h1.innerText='haii'
+            h1.style.color='red'
+            h1.style.fontSize='3rem'
+        }
+        document.getElementsByClassName("c1")[0].innerHTML ='welcome'
+        document.getElementsByTagName('h3')[0].style.color ='yellow'
+        document.querySelector('#para').style.backgroundColor ='cyan'
+        document.querySelectorAll('.c1')[0].style.color ='cyan'
+    </script>
+</body>
+</html>
