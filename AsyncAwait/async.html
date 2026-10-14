@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User Data Fetch</h1>
+    <button onclick="getUser()">Get User</button>
+    <p id="output"></p>
+    <script>
+        function fetchUser() {
+            return new Promise((resolve, reject) => {
+                let success =true
+                setTimeout(() => {
+                    if(success){
+                        resolve({
+                            name:"gautham",
+                            age:23,
+                            role:"developer"
+                        })
+                    }else{
+                        reject("failed to fetch user")
+                    }
+                }, 2000);
+            })
+        }
+        async function getUser() {
+            const output =document.getElementById("output")
+            output.textContent="loading..."
+            try{
+                let  user = await fetchUser()
+                output.innerText= `Name: ${user.name}
+                age:${user.age}
+                role:${user.role}`
+            }catch{
+                output.innerText("error")
+            }finally{
+                console.log("output got");
+                
+            }
+        }
+    </script>
+</body>
+</html>

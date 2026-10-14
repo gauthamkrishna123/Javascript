@@ -136,12 +136,15 @@
         }
         if(!email.includes("@")|| !email.includes(".com")){
           document.getElementById('emailerror').style.display='block';
+          isValid =false
         }
         if(password.length <6){
           document.getElementById('passerror').style.display = 'block';
+          isValid =false
         }
         if (password !== confirmpass){
           document.getElementById('cpasserror').style.display='block';
+          isValid =false
         }
         return isValid;
       }

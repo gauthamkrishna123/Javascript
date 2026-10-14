@@ -14,13 +14,14 @@
     }
 </style>
 <body>
-    <div id="box" tabindex="0">hello
+    <div id="box" tabindex="0">hello😊
 
     </div>
     <script>
         const text = document.getElementById("box")
         text.addEventListener('keydown',function(event){
-            text.textContent="gg"
+            // text.textContent="gg"
+            event.target.textContent="👌"
             text.style.backgroundColor='red'
         })
         text.addEventListener('keyup',function(event){

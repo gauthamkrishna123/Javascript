@@ -66,6 +66,8 @@ console.log(w4[0]);
 
  let sentence = 'hello i am from ernakulam'
  let s=sentence.split(' ');
+ console.log(s);
+ 
  let largest =''
  for(let i=0;i<s.length;i++){
     if(s[i].length > largest.length){
