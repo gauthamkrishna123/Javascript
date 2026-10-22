@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="res2"></h2>
+    <button onclick="fetchData()">fetch</button>
+    <script >
+        function fetchData(){
+            try{
+                fetch('data.json')
+                .then(res =>res.json())
+                .then(data =>document.getElementById("res2").innerHTML=data.name)
+            }catch (err){
+                console.log(err);
+                
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="pokemon" placeholder="name">
+    <button id="btn" onclick="searchPoke()">search</button>
+    <button id="btn2" onclick="fetchName()">Names</button>
+    <h3 id="name"></h3>
+    <img id="image" src="" alt="">
+    <ul id="list"></ul>
+    <script>
+        async function searchPoke() {
+            try{
+                let name = document.getElementById("pokemon").value.toLowerCase();
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+
+                if(!response.ok){
+                    throw new Error("pokemon not found");
+                    
+                }
+                    const data = await response.json();
+                    document.getElementById("name").innerHTML=data.name
+                    document.getElementById("image").src= data.sprites.front_shiny;
+                
+                
+            }catch (er){
+                alert(er.message)
+                
+            }
+        }
+        async function fetchName() {
+            try{
+                
+            
+            const response = await fetch("https://pokeapi.co/api/v2/pokemon/")
+            const data = await response.json()
+            list.innerHTML=" "
+            data.results.forEach(name =>{
+                let li =document.createElement("li");
+                li.innerText=name.name;
+                list.appendChild(li);
+
+            });
+            }catch(er){
+
+            }
+        }
+    </script>
+</body>
+</html>

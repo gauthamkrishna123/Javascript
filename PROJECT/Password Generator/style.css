@@ -1,0 +1,26 @@
+main{
+    padding: 20px;
+    max-width:400px;
+    max-height: 350px;
+    margin-left: 20%;
+    background-color: rgb(216, 235, 178);
+}
+.display{
+    margin: 20px;
+    padding: 20px;
+    background-color: aliceblue;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+.copyimg{
+    width: 20px;;
+    height: 20px;
+}
+.display input{
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+}

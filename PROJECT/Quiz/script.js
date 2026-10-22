@@ -14,7 +14,7 @@ const questions =[
             {text:"Man",correct:false},
             {text:"Boy",correct:false},
             {text:"Girl",correct:false},
-            {text:"Cat",correct:true},
+            {text:"Zombie",correct:true},
         ]
     },
         {

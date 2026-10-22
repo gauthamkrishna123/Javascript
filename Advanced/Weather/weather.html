@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="inp">
+        <input id="input" type="text" placeholder="Enter city Name" />
+        <button onclick="findWeather()">search</button>
+      </div>
+      <div class="weather-box">
+        <h2 id="cityName"></h2>
+        <img id="icon" alt="" />
+        <div id="temp"></div>
+        <div id="pressure"></div>
+        <div id="humidity"></div>
+        <div id="wind"></div>
+      </div>
+      <script>
+        async function findWeather() {
+          const city = document.getElementById("input").value;
+          const apikey = "4aea29df929cf7c4491656ce7536f3fa";
+          const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric;`;
+
+          try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            if (data.cod == "404") {
+              alert("page not found");
+              return;
+            }
+            document.getElementById("cityName").innerHTML = data.name;
+            document.getElementById("temp").innerHTML = `temp 🌡️:${data.main.temp}`;
+            document.getElementById("humidity").textContent = `Humidity💨:${data.main.humidity}%`;
+            document.getElementById("pressure").textContent = `Pressure: ${data.main.pressure} hPa`;
+            document.getElementById("wind").textContent = `Wind speed: ${data.wind.speed} m/s`;
+           
+          } catch (err) {
+            alert(err);
+          }
+        }
+      </script>
+    </main>
+  </body>
+</html>

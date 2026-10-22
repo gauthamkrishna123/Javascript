@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="task">
+    <button onclick="addTask()">Add</button>
+    <ul id="list"></ul>
+    <script>
+        let tasks=[]    
+         function addTask() {
+            let taskInput = document.getElementById("task").value;
+            tasks.push(taskInput);
+            document.getElementById("task").value = "";
+            displayTask();
+        }
+        function displayTask(){
+            let output =" "
+            tasks.map(task =>{
+                output+=`<li>
+                    ${task}
+                    <button onClick="completeTask('${task}')">Completed</button>
+                    <button onClick="deleteTask('${task}')">Delete</buttton>
+                        </li>
+                        `
+            })
+            document.getElementById("list").innerHTML=output;
+
+        }
+        //filter
+        function deleteTask(taskname){
+            tasks =tasks.filter(task => task !== taskname)
+            displayTask()
+        }
+        //splice
+        // function deleteTask(taskname){
+        //     tasks.splice(tasks.indexOf(taskname),1)
+        //     displayTask();
+        // }
+        //mark task as completed
+        function completeTask(taskname){
+            let listitems = document.querySelectorAll("#list li")
+            listitems.forEach(item =>{
+                if(item.textContent.includes(taskname)){
+                    item.style.textDecoration ="line-through"
+                }
+            })
+        }
+    </script>
+</body>
+</html>
