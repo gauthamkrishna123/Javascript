@@ -149,3 +149,13 @@ if (numb % 2 == 0 && numb % 5 == 0) {
 let d = 5;
 console.log(d++ + ++d);
 12;
+//
+ function removeDuplicate(arr){
+    const newarray = [...new Set(arr)]
+    return newarray
+    
+ }
+ const res = removeDuplicate([2,3,3,5,55,5,7]);
+
+ console.log(res);
+ 

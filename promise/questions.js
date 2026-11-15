@@ -229,3 +229,51 @@ function receipt() {
         console.log(res);
     }).catch(error=>{console.log(error);
     })
+
+    // eg:1
+
+    function RegesterStudent(){
+        
+        return new Promise((resolve,reject)=>{
+            console.log("regestration started");
+
+            
+            setTimeout(() => {
+                let name = false
+                if(name){
+                    reject("name already exist")
+                }else{
+                    resolve("name added successfully.")
+                }
+            },2000);
+            
+        })
+        
+    };
+
+    function uploadPhoto(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                console.log("photo uploaded");
+                
+                resolve()
+            },2000)
+        })
+    };
+    function generateId(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                console.log("student id generated");
+                
+                resolve()
+            },2000);
+        })
+    }
+    RegesterStudent()
+    .then((res) =>{console.log(res)})
+    .then(uploadPhoto)
+    .then(generateId)
+    .then(()=>console.log("Registration completed successfully.")
+    )
+    .catch((error)=>{console.log("something went wrong:",error);
+    })

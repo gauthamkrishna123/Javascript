@@ -119,7 +119,7 @@ if(freq[value] == 1){
 
 //search
 let a5 = [1,4,9]
-search = 9
+let search = 9
 console.log(a5.includes(search));
 
 //even and odd

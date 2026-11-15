@@ -106,3 +106,23 @@ userLoggedin("Admin",()=>{
         })
     })
 })
+
+//example1
+
+function downloadFile(callback){
+    console.log("start downloading");
+    
+    setTimeout(() => {
+        console.log("Download completed");
+        callback();
+    },3000);
+}
+
+function ready(){
+    console.log("ready to use");
+    
+}
+
+downloadFile(()=>{
+    ready();
+})
